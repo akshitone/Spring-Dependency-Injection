@@ -1,10 +1,8 @@
 package com.springTutorial.dependecyInjection.controllers;
 
-import com.springTutorial.dependecyInjection.services.GreetingServiceImpl;
+import com.springTutorial.dependecyInjection.services.ConstructorGreetingService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-
-import static org.junit.jupiter.api.Assertions.*;
 
 class PropertyInjectionControllerTest {
 
@@ -13,7 +11,7 @@ class PropertyInjectionControllerTest {
     @BeforeEach
     void setUp() {
         propertyInjectionController = new PropertyInjectionController();
-        propertyInjectionController.greetingService = new GreetingServiceImpl();
+        propertyInjectionController.greetingService = new ConstructorGreetingService();
     }
 
     @Test

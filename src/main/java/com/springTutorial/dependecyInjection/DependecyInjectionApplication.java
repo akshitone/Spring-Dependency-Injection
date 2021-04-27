@@ -14,8 +14,7 @@ public class DependecyInjectionApplication {
     public static void main(String[] args) {
         ApplicationContext applicationContext = SpringApplication.run(DependecyInjectionApplication.class, args);
         ControllerDemo controllerDemo = (ControllerDemo) applicationContext.getBean("controllerDemo");
-        String greeting = controllerDemo.sayHello();
-        System.out.println("Return: " + greeting);
+        System.out.println("Return: " + controllerDemo.sayHello());
 
         System.out.println("-----Property------");
         PropertyInjectionController propertyInjectionController = (PropertyInjectionController) applicationContext.getBean("propertyInjectionController");
@@ -25,7 +24,7 @@ public class DependecyInjectionApplication {
         SetterInjectionController setterInjectionController = (SetterInjectionController) applicationContext.getBean("setterInjectionController");
         System.out.println(setterInjectionController.getGreeting());
 
-        System.out.println("-----Setter------");
+        System.out.println("-----Constructor------");
         ConstructorInjectionController constructorInjectionController = (ConstructorInjectionController) applicationContext.getBean("constructorInjectionController");
         System.out.println(constructorInjectionController.getGreeting());
     }
